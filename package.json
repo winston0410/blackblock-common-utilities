@@ -34,7 +34,7 @@
   ],
   "scripts": {
     "test": "npx mocha --recursive './test/**/*.js' --require @babel/register --require esm",
-    "build": "npx spago build && NODE_ENV=production npx rollup -c;",
+    "build": "npx spago bundle-module --main Main --to src/_Main.js && NODE_ENV=production npx rollup -c;",
     "prepublish": "npm run build"
   },
   "peerDependencies": {

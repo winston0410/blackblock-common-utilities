@@ -1,1 +1,1 @@
-export * from '../output/Main/index.js'
+export * from './_Main.js'

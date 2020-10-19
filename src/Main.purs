@@ -1,7 +1,7 @@
 module Main where
 
-import Prelude
-import Foreign
+import Prelude (not, (==), (||))
+import Foreign (Foreign, isNull, isUndefined)
 
 when :: forall a. (a → Boolean) → (a → a) → a → a
 when predicate fn value =
