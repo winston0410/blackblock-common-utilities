@@ -1,1 +1,5 @@
-export * from './_Main.js'
+export {
+  when,
+  defaultWhen,
+  defaultWhenEmpty
+} from './_Main.js'
