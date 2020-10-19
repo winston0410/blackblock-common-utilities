@@ -15,8 +15,12 @@ defaultWhen predicate defValue value =
   then value
   else defValue
 
+valueWhenEmpty :: Foreign → Foreign → Foreign
+valueWhenEmpty defValue value =
+  defaultWhen (\x -> (isUndefined x) || (isNull x) ) defValue value
+
 defaultWhenEmpty :: Foreign → Foreign → Foreign
 defaultWhenEmpty defValue value =
-  defaultWhen
-  (\x -> not ((isUndefined x) || (isNull x)) )defValue value
-  -- (\x -> (not (isNull x)) || (not (isUndefined x) ) defValue value
+  defaultWhen (\x -> not ((isUndefined x) || (isNull x)) ) defValue value
+
+showIfValueExist = valueWhenEmpty

@@ -1,5 +1,7 @@
 export {
   when,
   defaultWhen,
-  defaultWhenEmpty
+  defaultWhenEmpty,
+  valueWhenEmpty,
+  showIfValueExist
 } from './_Main.js'

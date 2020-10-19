@@ -55,8 +55,18 @@ var PS = {};
           })(defValue)(value);
       };
   };
+  var valueWhenEmpty = function (defValue) {
+      return function (value) {
+          return defaultWhen(function (x) {
+              return Foreign.isUndefined(x) || Foreign.isNull(x);
+          })(defValue)(value);
+      };
+  };
+  var showIfValueExist = valueWhenEmpty;
   exports["when"] = when;
   exports["defaultWhen"] = defaultWhen;
+  exports["valueWhenEmpty"] = valueWhenEmpty;
   exports["defaultWhenEmpty"] = defaultWhenEmpty;
+  exports["showIfValueExist"] = showIfValueExist;
 })(PS);
 module.exports = PS["Main"];
