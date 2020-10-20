@@ -5,6 +5,9 @@ export {
   defaultWhen,
   defaultWhenEmpty,
   valueWhenEmpty,
-  showIfValueExist,
-  slugify
+  showIfValueExist
 } from './_Main.js'
+
+export {
+  slugify
+}
