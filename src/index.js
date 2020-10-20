@@ -1,7 +1,10 @@
+const slugify = (text) => encodeURIComponent(text).toLowerCase()
+
 export {
   when,
   defaultWhen,
   defaultWhenEmpty,
   valueWhenEmpty,
-  showIfValueExist
+  showIfValueExist,
+  slugify
 } from './_Main.js'
