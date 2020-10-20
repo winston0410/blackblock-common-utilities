@@ -24,3 +24,6 @@ defaultWhenEmpty defValue value =
   defaultWhen (\x -> not ((isUndefined x) || (isNull x)) ) defValue value
 
 showIfValueExist = valueWhenEmpty
+
+-- filterOutKey :: forall a b. { a :: b } -> Array a -> { a :: b }
+-- filterOutKey obj targetKey = obj
