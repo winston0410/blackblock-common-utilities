@@ -37,11 +37,6 @@ var PS = {};
           };
       };
   };
-  var filterOutKey = function (obj) {
-      return function (targetKey) {
-          return obj;
-      };
-  };
   var defaultWhen = function (predicate) {
       return function (defValue) {
           return function (value) {
@@ -73,6 +68,5 @@ var PS = {};
   exports["valueWhenEmpty"] = valueWhenEmpty;
   exports["defaultWhenEmpty"] = defaultWhenEmpty;
   exports["showIfValueExist"] = showIfValueExist;
-  exports["filterOutKey"] = filterOutKey;
 })(PS);
 module.exports = PS["Main"];
