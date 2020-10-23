@@ -9,6 +9,12 @@ when predicate fn value =
   then fn value
   else value
 
+returnIf :: forall a b. (a → Boolean) → b → b → a -> b
+returnIf predicate value1 value2 testValue =
+  if (predicate testValue) == true
+  then value1
+  else value2
+
 defaultWhen :: forall a. (a → Boolean) → a → a → a
 defaultWhen predicate defValue value =
   if predicate value == true
