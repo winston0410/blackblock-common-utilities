@@ -5,7 +5,8 @@ export {
   defaultWhen,
   defaultWhenEmpty,
   valueWhenEmpty,
-  showIfValueExist
+  showIfValueExist,
+  returnIf
 } from './_Main.js'
 
 export {

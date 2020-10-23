@@ -37,11 +37,24 @@ var PS = {};
           };
       };
   };
+  var returnIf = function (predicate) {
+      return function (value1) {
+          return function (value2) {
+              return function (testValue) {
+                  var $1 = predicate(testValue) === true;
+                  if ($1) {
+                      return value1;
+                  };
+                  return value2;
+              };
+          };
+      };
+  };
   var defaultWhen = function (predicate) {
       return function (defValue) {
           return function (value) {
-              var $1 = predicate(value) === true;
-              if ($1) {
+              var $2 = predicate(value) === true;
+              if ($2) {
                   return value;
               };
               return defValue;
@@ -64,6 +77,7 @@ var PS = {};
   };
   var showIfValueExist = valueWhenEmpty;
   exports["when"] = when;
+  exports["returnIf"] = returnIf;
   exports["defaultWhen"] = defaultWhen;
   exports["valueWhenEmpty"] = valueWhenEmpty;
   exports["defaultWhenEmpty"] = defaultWhenEmpty;
