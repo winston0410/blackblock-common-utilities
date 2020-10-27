@@ -30,7 +30,7 @@ valueWhenEmpty defValue value =
 
 defaultWhenEmpty :: Foreign → Foreign → Foreign
 defaultWhenEmpty defValue value =
-  defaultWhen (\x -> not (isNil x) defValue value
+  defaultWhen (\x -> not (isNil x)) defValue value
 
 showIfValueExist = valueWhenEmpty
 
