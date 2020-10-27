@@ -67,14 +67,14 @@ var PS = {};
   var defaultWhenEmpty = function (defValue) {
       return function (value) {
           return defaultWhen(function (x) {
-              return !(Foreign.isUndefined(x) || Foreign.isNull(x));
+              return !isNil(x);
           })(defValue)(value);
       };
   };
   var valueWhenEmpty = function (defValue) {
       return function (value) {
           return defaultWhen(function (x) {
-              return Foreign.isUndefined(x) || Foreign.isNull(x);
+              return isNil(x);
           })(defValue)(value);
       };
   };
