@@ -50,6 +50,9 @@ var PS = {};
           };
       };
   };
+  var isNil = function (value) {
+      return Foreign.isUndefined(value) || Foreign.isNull(value);
+  };
   var defaultWhen = function (predicate) {
       return function (defValue) {
           return function (value) {
@@ -76,6 +79,7 @@ var PS = {};
       };
   };
   var showIfValueExist = valueWhenEmpty;
+  exports["isNil"] = isNil;
   exports["when"] = when;
   exports["returnIf"] = returnIf;
   exports["defaultWhen"] = defaultWhen;

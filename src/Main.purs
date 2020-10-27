@@ -3,6 +3,9 @@ module Main where
 import Prelude (not, (==), (||))
 import Foreign (Foreign, isNull, isUndefined)
 
+isNil :: forall a. Foreign -> Boolean
+isNil value = (isUndefined value ) || (isNull value )
+
 when :: forall a. (a → Boolean) → (a → a) → a → a
 when predicate fn value =
   if predicate value == true
@@ -23,11 +26,11 @@ defaultWhen predicate defValue value =
 
 valueWhenEmpty :: Foreign → Foreign → Foreign
 valueWhenEmpty defValue value =
-  defaultWhen (\x -> (isUndefined x) || (isNull x) ) defValue value
+  defaultWhen (\x -> (isNil x) ) defValue value
 
 defaultWhenEmpty :: Foreign → Foreign → Foreign
 defaultWhenEmpty defValue value =
-  defaultWhen (\x -> not ((isUndefined x) || (isNull x)) ) defValue value
+  defaultWhen (\x -> not (isNil x) defValue value
 
 showIfValueExist = valueWhenEmpty
 
