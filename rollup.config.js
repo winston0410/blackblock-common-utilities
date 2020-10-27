@@ -10,7 +10,7 @@ export default [{
   input: './src/index.js',
   output: [{
     exports: 'auto',
-    file: 'dist/esm/index.esm.js',
+    file: 'dist/esm/index.mjs.js',
     format: 'esm',
     plugins: [
       terser({
